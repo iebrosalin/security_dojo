@@ -291,9 +291,19 @@ res = re.findall(r'\d\">(?!-)(.*?)</option>\n', text, flags = re.DOTALL)
 
 for item in res:
     print("""
-    <detail>
+    <details>
         <summary>"""
         + item +
     """</summary>
-    </detail>
+    </details>
+    """)
+res = re.findall(r'\d\">(-.*?-)</option>\n', text, flags = re.DOTALL)
+
+for item in res:
+    print("""
+    <details>
+        <summary>"""
+        + item +
+    """</summary>
+    </details>
     """)
