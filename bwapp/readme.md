@@ -1,4 +1,4 @@
-<details>
+<details> 
     <summary>/ A1 - Injection /</summary>
     <details> <summary>HTML Injection - Reflected (GET)</summary>
     </details>
