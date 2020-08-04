@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+import optparse 
 import scapy.all as scapy
 
 def get_arguments():
