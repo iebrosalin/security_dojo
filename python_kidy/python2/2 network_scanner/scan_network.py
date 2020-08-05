@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 import optparse 
-import scapy.all as scapy
+import scapy.all as scapys
 
 def get_arguments():
     parser = optparse.OptionParser()
@@ -10,10 +10,10 @@ def get_arguments():
     return options
 
 def scan(ip):
-    arp_request = scapy.ARP(pdst = ip)
-    broadcast = scapy.Ether(dst = "ff:ff:ff:ff:ff:ff")
-    arp_reqiest_broadcast = broadcast/arp_request
-    answered_list = scapy.srp(arp_request_broadcast, timeout = 1, verbose = False)[0]
+    arp_request = scapys.ARP(pdst = ip)
+    broadcast = scapys.Ether(dst = "ff:ff:ff:ff:ff:ff")
+    arp_request_broadcast = broadcast/arp_request
+    answered_list = scapys.srp(arp_request_broadcast, timeout = 1, verbose = False)[0]
 
     client_list = []
 
