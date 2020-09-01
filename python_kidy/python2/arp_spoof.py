@@ -55,4 +55,5 @@ def run():
         print("\n[+] Detected CTRL + C ......... Resetting ARP tables..... Please wait......")
         restore(target, gateway)
         restore(gateway, target)
-    
+
+run()
