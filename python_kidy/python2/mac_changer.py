@@ -1,8 +1,7 @@
 #!/usr/bin/env python
 
-import subprocess
 import optparse 
-import re
+
 from lib.mac import *
 
 def get_arguments():

