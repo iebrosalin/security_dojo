@@ -1,0 +1,59 @@
+<?xml version="1.0" ?>
+<cherrytree>
+	<node custom_icon_id="0" foreground="" is_bold="False" name="Buff" prog_lang="custom-colors" readonly="False" tags="" ts_creation="1601085808.27" ts_lastsave="1601091960.0" unique_id="1">
+		<rich_text></rich_text>
+		<node custom_icon_id="0" foreground="" is_bold="False" name="Enum" prog_lang="custom-colors" readonly="False" tags="" ts_creation="1601085817.88" ts_lastsave="1601085839.41" unique_id="2">
+			<rich_text></rich_text>
+			<node custom_icon_id="0" foreground="" is_bold="False" name="Nmap" prog_lang="custom-colors" readonly="False" tags="" ts_creation="1601085839.41" ts_lastsave="1601085841.95" unique_id="3">
+				<rich_text>Starting Nmap 7.80 ( </rich_text>
+				<rich_text link="webs https://nmap.org">https://nmap.org</rich_text>
+				<rich_text> ) at 2020-09-25 10:50 EDT
+Nmap scan report for 10.10.10.198
+Host is up (0.60s latency).
+Not shown: 65533 filtered ports
+PORT     STATE SERVICE    VERSION
+7680/tcp open  pando-pub?
+8080/tcp open  http       Apache httpd 2.4.43 ((Win64) OpenSSL/1.1.1g PHP/7.4.6)
+| http-open-proxy: Potentially OPEN proxy.
+|_Methods supported:CONNECTION
+|_http-server-header: Apache/2.4.43 (Win64) OpenSSL/1.1.1g PHP/7.4.6
+|_http-title: mrb3n's Bro Hut
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+OS fingerprint not ideal because: Missing a closed TCP port so results incomplete
+No OS matches for host
+Network Distance: 2 hops
+
+TRACEROUTE (using port 8080/tcp)
+HOP RTT       ADDRESS
+1   624.74 ms 10.10.16.1
+2   551.34 ms 10.10.10.198
+
+OS and Service detection performed. Please report any incorrect results at </rich_text>
+				<rich_text link="webs https://nmap.org/submit/">https://nmap.org/submit/</rich_text>
+				<rich_text> .
+Nmap done: 1 IP address (1 host up) scanned in 1437.11 seconds
+</rich_text>
+			</node>
+		</node>
+	</node>
+	<node custom_icon_id="0" foreground="" is_bold="False" name="Exploit" prog_lang="custom-colors" readonly="False" tags="" ts_creation="1601091960.01" ts_lastsave="1601091978.22" unique_id="4">
+		<rich_text></rich_text>
+		<node custom_icon_id="0" foreground="" is_bold="False" name="gym manager v1.0" prog_lang="custom-colors" readonly="False" tags="" ts_creation="1601091978.22" ts_lastsave="1601092125.55" unique_id="5">
+			<rich_text>On the page </rich_text>
+			<rich_text link="webs http://10.10.10.198:8080/contact.php">http://10.10.10.198:8080/contact.php</rich_text>
+			<rich_text> see CMS and version
+
+Google exploit for CMS. Find exploit </rich_text>
+			<rich_text link="webs https://www.exploit-db.com/exploits/48506">https://www.exploit-db.com/exploits/48506</rich_text>
+			<rich_text>
+
+Go it in the terminal
+python 48506.py </rich_text>
+			<rich_text link="webs http://10.10.10.198:8080/">http://10.10.10.198:8080/</rich_text>
+			<rich_text>
+
+
+</rich_text>
+		</node>
+	</node>
+</cherrytree>
