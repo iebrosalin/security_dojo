@@ -1,2 +1,2 @@
-# security_dojo
-All security tricks
+# My security  dojo
+Репозиторий содержит все публичные материалы об ИБ на своём пути.
