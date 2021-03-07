@@ -4,7 +4,7 @@
 
 ### 1. HTML - Source code
 
-1) Checked page source ctrl+U.
+1) Проверьте исходный код. Сочетание ctrl+U откроет исходный код почти в любом браузере.
 
 ### 2. HTTP - Open redirect
 
@@ -124,7 +124,7 @@ Tools for extracting .git
 
   grep -r "$password"
 
-  4. Finnal
+  4. Final
    
 * wget --recursive --no-parent http://challenge01.root-me.org/web-serveur/ch61/.git/ 
 
