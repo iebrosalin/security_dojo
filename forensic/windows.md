@@ -81,3 +81,20 @@ default {"LogType Not Recognised: $($_.LogonType)"}
 }
 }}
 ```
+
+Инструменты 
+                             
+- FTK               
+- RamCapturer             
+- Sysmon
+- Autoruns 
+- mftdump.zip       
+- RegistryExplorer
+- avz4                                     
+- ProcessExplorer   
+- RegRipper3.0-master
+- ProcessMonitor    
+- Sigcheck                
+- Zoomlt
+- PsTools           
+- sleuthkit-4.8.0-win32
