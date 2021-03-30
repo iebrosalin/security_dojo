@@ -12,3 +12,8 @@
 
 ## Git 
 [GitHowTo](https://githowto.com/ru)
+
+## Bug bounty places
+
+[Bugcrowd](https://www.bugcrowd.com/)
+[hackerone](https://www.hackerone.com/)

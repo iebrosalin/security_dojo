@@ -98,3 +98,9 @@ default {"LogType Not Recognised: $($_.LogonType)"}
 - Zoomlt
 - PsTools           
 - sleuthkit-4.8.0-win32
+
+Информацию о пользователях на локальной машине можно получить
+из SAM-файла \Windows\System32\config (там хранятся файлы реестра )
+
+Инфа о профилях находится 
+в реестре по пути HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\ProfileList
