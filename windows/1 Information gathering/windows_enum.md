@@ -60,7 +60,8 @@
 
 ### Executables
 
-- winPEAS.exe
+- winPEAS.exe REG ADD HKCU\Console /v VirtualTerminalLevel /t REG_DWORD /d 1
+
 - Searbeit.exe (compile)
 - Watson.exe (compile)
 - SarpUp.exe (compile)
@@ -73,3 +74,5 @@
 ### Other
 - windows-exploit-suggester.py (local)
 - Exploit Suggester(Metasploit)
+
+https://github.com/frizb/Windows-Privilege-Escalation/blob/master/README.md
