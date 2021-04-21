@@ -141,6 +141,13 @@ AD
 
 https://docs.microsoft.com/ru-ru/windows/security/threat-protection/auditing/event-4689
 https://docs.microsoft.com/ru-ru/windows/security/threat-protection/auditing/event-4688
+Нажмите Win+ Rи введите gpedit.msc, чтобы открыть диспетчер групповой политики.
+На левой панели перейдите к
+
+Политика локального компьютера \ Конфигурация компьютера \ Параметры Windows \ Параметры безопасности \ Локальные политики \ Политика аудита
+
+На правой панели дважды щелкните «Аудит отслеживания процессов» и установите оба флажка.
+
 https://docs.microsoft.com/ru-ru/windows/security/threat-protection/auditing/event-5024
 https://docs.microsoft.com/ru-ru/windows/security/threat-protection/auditing/event-5025
 https://docs.microsoft.com/ru-ru/windows/security/threat-protection/auditing/event-5031
