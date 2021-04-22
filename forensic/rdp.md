@@ -1,6 +1,5 @@
 # Windows RDP
 
-https://winitpro.ru/index.php/2018/09/25/analizing-rdp-logs-windows-terminal-rds/
 
 ```
   Актуально для Windows Server 2008 R2, 2012/R2, 2016, так и в соответствующих десктопных версиях Windows (Windows 7, 8.1, 10).
@@ -73,3 +72,7 @@ Source Network Address
 При этом в журнале Security нужно смотреть событие EventID 4634 (An account was logged off).
 
 Событие Event 9009 (The Desktop Window Manager has exited with code (<X>) в журнале System говорит о том, что пользователь инициировал завершение RDP сессии, и окно и графический shell пользователя был завершен.
+
+Шпора составлена на основе:
+
+https://winitpro.ru/index.php/2018/09/25/analizing-rdp-logs-windows-terminal-rds/
