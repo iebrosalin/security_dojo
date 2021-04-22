@@ -1,4 +1,4 @@
-# Windows RDP
+# Windows RDP события
 
 
 *Актуально для Windows Server 2008 R2, 2012/R2, 2016, так и в соответствующих десктопных версиях Windows (Windows 7, 8.1, 10).*
