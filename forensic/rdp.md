@@ -5,11 +5,11 @@
   Актуально для Windows Server 2008 R2, 2012/R2, 2016, так и в соответствующих десктопных версиях Windows (Windows 7, 8.1, 10).
 ```
 
-1. Network Connection - 1149 (Remote Desktop Services: User authentication succeeded)
-2. Authentication  – успешная или неуспешная аутентификация пользователя на сервере  – 4624 (успешная аутентификация — An account was successfully logged on) или 4625 (ошибка аутентификации — An account failed to log on)
-3. Logon
-4. Session Disconnect/Reconnect
-5. Logoff
+1. [Network Connection - 1149 (Remote Desktop Services: User authentication succeeded)](https://github.com/iebrosalin/security_dojo/blob/master/forensic/rdp.md#network-connection---1149-remote-desktop-services-user-authentication-succeeded)
+2. [Authentication  – успешная или неуспешная аутентификация пользователя на сервере  – 4624 (успешная аутентификация — An account was successfully logged on) или 4625 (ошибка аутентификации — An account failed to log on)](https://github.com/iebrosalin/security_dojo/blob/master/forensic/rdp.md#authentication---%D1%83%D1%81%D0%BF%D0%B5%D1%88%D0%BD%D0%B0%D1%8F-%D0%B8%D0%BB%D0%B8-%D0%BD%D0%B5%D1%83%D1%81%D0%BF%D0%B5%D1%88%D0%BD%D0%B0%D1%8F-%D0%B0%D1%83%D1%82%D0%B5%D0%BD%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D1%8F-%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8F-%D0%BD%D0%B0-%D1%81%D0%B5%D1%80%D0%B2%D0%B5%D1%80%D0%B5--4624-%D1%83%D1%81%D0%BF%D0%B5%D1%88%D0%BD%D0%B0%D1%8F-%D0%B0%D1%83%D1%82%D0%B5%D0%BD%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D1%8F--an-account-was-successfully-logged-on-%D0%B8%D0%BB%D0%B8-4625-%D0%BE%D1%88%D0%B8%D0%B1%D0%BA%D0%B0-%D0%B0%D1%83%D1%82%D0%B5%D0%BD%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8--an-account-failed-to-log-on)
+3. [Logon](https://github.com/iebrosalin/security_dojo/blob/master/forensic/rdp.md#logon--21--remote-desktop-services-session-logon-succeeded-rdp-%D0%B2%D1%85%D0%BE%D0%B4-%D0%B2-%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%83-%D1%81%D0%BE%D0%B1%D1%8B%D1%82%D0%B8%D0%B5-%D0%BF%D0%BE%D1%8F%D0%B2%D0%BB%D1%8F%D1%8E%D1%89%D0%B5%D0%B5%D1%81%D1%8F-%D0%BF%D0%BE%D1%81%D0%BB%D0%B5-%D1%83%D1%81%D0%BF%D0%B5%D1%88%D0%BD%D0%BE%D0%B9-%D0%B0%D1%83%D1%82%D0%B5%D0%BD%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8-%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8F)
+4. [Session Disconnect/Reconnect](https://github.com/iebrosalin/security_dojo/blob/master/forensic/rdp.md#session-disconnectreconnect)
+5. [Logoff](https://github.com/iebrosalin/security_dojo/blob/master/forensic/rdp.md#logoff-eventid-23-remote-desktop-services-session-logoff-succeeded--%D0%B2%D1%8B%D1%85%D0%BE%D0%B4-%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8F-%D0%B8%D0%B7-%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B)
 
 ## Network Connection - 1149 (Remote Desktop Services: User authentication succeeded)
 
