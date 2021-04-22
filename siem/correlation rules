@@ -1,0 +1,152 @@
+event Malware_event:
+	key:
+        event_src.asset,object.name, object.path, object.state
+	filter {
+    	msgid == "1116" or msgid == "1117"
+    }
+    
+rule Detected_malware_Windows_Defender: Malware_event
+    on Malware_event {
+    	$datafield1 = object.name
+        $datafield2 = object.path
+        $datafield3 = object.state
+        $datafield4 = event_src.asset
+        $datafield5 = datafield6 
+        $datafield5 = datafield7
+        $event_src.host = event_src.host
+    }
+
+emit {
+
+	$correlation_name = "Detected_malware_Windows_Defender"
+    $correlation_type = "incident"
+    $category.generic = "Attacks & Recon"
+    $category.high = "Malware"
+
+    $importance = "high"
+
+    $incident.aggregation.key = join([$correlation_name, $datafield1, $datafield2, $datafield3], "|")
+    $incident.severity = "high"
+    $incident.category = "VirusDetection"
+}
+
+---
+
+event Disabled_Windows_Firewall_event:
+	key:
+        asset_ids
+	filter {
+    	msgid == "4950" and object.type == "Включить брандмауэр Защитника Windows"
+        and object.value == "Да"
+    }
+    
+rule Disabled_Windows_Firewall: Disabled_Windows_Firewall_event
+    on Disabled_Windows_Firewall_event {
+    	$event_src.host = event_src.host
+    }
+
+emit {
+
+	$correlation_name = "Disabled_Windows_Firewall_event"
+    $correlation_type = "incident"
+    $category.generic = "Accounting"
+    $category.high = "Network Accounting"
+	$category.low = "Firewall Rules Usage"
+
+    $importance = "high"
+
+    $incident.aggregation.key = join([$correlation_name, $event_src.host], "|")
+    $incident.severity = "high"
+    $incident.category = "VirusDetection"
+}
+
+---
+
+event Disabled_Windows_Malware_RTP_event:
+	key:
+        recv_ipv4 
+	filter {
+    	msgid == "5001"
+    }
+    
+rule Disabled_Windows_Malware_RTP: Disabled_Windows_Malware_RTP_event
+    on Disabled_Windows_Malware_RTP_event {
+    	$event_src.host = event_src.host
+        
+    }
+
+emit {
+
+	$correlation_name = "Disabled_Windows_Malware_RTP"
+    $correlation_type = "incident"
+    $category.generic = "Configuration Management"
+    $category.high = "System Configuration Management"
+	$category.low = "Security Settings Modification" 
+    $importance = "high"
+    $subject = "account"
+    $action = "disable"
+    $object = "application"
+    $event_src.host = $datafield1
+
+    $incident.aggregation.key = join([$correlation_name, $event_src.host], "|")
+    $incident.severity = "high"
+    $incident.category = "ProtectionMalfunction"
+}
+
+---
+
+event Enabled_Windows_Firewall_event:
+	key:
+        recv_ipv4 
+	filter {
+    	msgid == "4950" and object.type == "Включить брандмауэр Защитника Windows"
+        and object.value == "Нет"
+    }
+    
+rule Enabled_Windows_Firewall: Enabled_Windows_Firewall_event
+    on Enabled_Windows_Firewall_event {
+    	$event_src.host = event_src.host
+    }
+
+emit {
+
+	$correlation_name = "Enabled_Windows_Firewall"
+    $correlation_type = "incident"
+    $category.generic = "Accounting"
+    $category.high = "Network Accounting"
+	$category.low = "Firewall Rules Usage"
+    $importance = "high"
+
+    $incident.aggregation.key = join([$correlation_name, $event_src.host], "|")
+    $incident.severity = "high"
+    $incident.category = "VirusDetection"
+    $incident.aggregation.timeout = 2h
+}
+
+---
+
+event Enabled_Windows_Malware_RTP_event:
+	key:
+        recv_ipv4 
+	filter {
+    	msgid == "5000"
+    }
+    
+rule Enabled_Windows_Malware_RTP: Enabled_Windows_Malware_RTP_event
+    on Enabled_Windows_Malware_RTP_event {
+    	$event_src.host = event_src.host
+    }
+
+emit {
+
+	$correlation_name = "Enabled_Windows_Malware_RTP"
+    $correlation_type = "incident"
+    $category.generic = "Configuration Management"
+    $category.high = "System Configuration Management"
+	$category.low = "Security Settings Modification" 
+    $importance = "high"
+
+    $incident.aggregation.key = join([$correlation_name, $event_src.host], "|")
+    $incident.severity = "high"
+    $incident.category = "ProtectionMalfunction"
+}
