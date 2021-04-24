@@ -91,7 +91,7 @@ Get-NetGPO | %{Get-ObjectAcl -ResolveGUIDs -Name $_.Name}
 Get-ObjectAcl -SamAccountName labuser -ResolveGUIDs -RightsFilter "ResetPassword"
 ```
 
-P.S.S
+P.S.S.
 С атакующего компа можно побрутить, посканить порты, позапускать psexec.
 
 ```bash
