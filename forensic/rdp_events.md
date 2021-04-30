@@ -74,3 +74,4 @@ Source Network Address
 Шпора составлена на основе:
 
 https://winitpro.ru/index.php/2018/09/25/analizing-rdp-logs-windows-terminal-rds/
+https://ponderthebits.com/2018/02/windows-rdp-related-event-logs-identification-tracking-and-investigation/
